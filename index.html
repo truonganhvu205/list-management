@@ -13,41 +13,32 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-            </ul>
-            <span class="navbar-text">
+            <div class="navbar-text ml-auto">
                 <a href=""
                 class="text-decoration-none">Login</a> or <a href=""
                 class="text-decoration-none">Register</a>
-            </span>
+            </div>
         </div>
     </nav>
 
     <div class="container">
-        <div class="my-4 d-flex justify-content-between align-items-center">
-            <h4>List Management</h4>
-            <button>print</button>
-        </div>
+        <h4 class="my-4">List Management</h4>
 
-        <div class="mb-4 d-flex">
-            <div class="flex-grow-1">
-                <button type="button">Add</button>
-                <button type="button">Import Excel</button>
-                <button type="button">Import CSV</button>
+        <div class="mb-4">
+            <div class="row mb-2 m-0">
+                <div>
+                    <button type="button">Add</button>
+                </div>
+                <div class="ml-auto">
+                    <button type="button">Move to trash</button>
+                    <button type="button">Restore</button>
+                </div>
             </div>
-            
-            <div>
-                <button type="button" data-toggle="modal" data-target="#exampleModal">Delete</button>
-                <button type="button" data-toggle="modal" data-target="#exampleModal">Restore</button>
+            <div class="row m-0">
+                <div>
+                    <button type="button">Import Excel</button>
+                    <button type="button">Import CSV</button>
+                </div>
             </div>
         </div>
         
@@ -58,6 +49,7 @@
                     <button>Excel</button>
                     <button>CSV</button>
                     <button>PDF</button>
+                    <button>print</button>
                 </div>
 
                 <input type="text" name=""
@@ -89,7 +81,7 @@
                         <td>
                             <button type="button">Detail</button>
                             <button type="button">Edit</button>
-                            <button type="button">Delete</button>
+                            <button type="button">Trash</button>
                         </td>
                     </tr>
                 </tbody>
