@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>List Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar w/ text</a>
+        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,44 +25,56 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Navbar text with an inline element
+                <a href=""
+                class="text-decoration-none">Login</a> or <a href=""
+                class="text-decoration-none">Register</a>
             </span>
         </div>
     </nav>
 
     <div class="container">
-        <h4 class="my-4">Management</h4>
+        <div class="my-4 d-flex justify-content-between align-items-center">
+            <h4>List Management</h4>
+            <button>print</button>
+        </div>
 
-        <div class="my-4 d-flex">
+        <div class="mb-4 d-flex">
             <div class="flex-grow-1">
-                <button type="button">Thêm</button>
-                <button type="button">Import file Excel</button>
+                <button type="button">Add</button>
+                <button type="button">Import Excel</button>
+                <button type="button">Import CSV</button>
             </div>
             
             <div>
-                <button type="button" data-toggle="modal" data-target="#exampleModal">Xóa</button>
-                <button type="button" class="d-none">Khôi phục</button>
+                <button type="button" data-toggle="modal" data-target="#exampleModal">Delete</button>
+                <button type="button" data-toggle="modal" data-target="#exampleModal">Restore</button>
             </div>
         </div>
         
-        <div>
-            <div class="my-4 d-flex justify-content-end">
-                <form action="">
-                    <input type="text" name="" id="">
-                    <button type="submit">Tìm kiếm</button>
-                </form>
+        <div class="border rounded p-4">
+            <div class="mb-2 d-flex justify-content-between align-items-center">
+                <div>
+                    <button>Copy</button>
+                    <button>Excel</button>
+                    <button>CSV</button>
+                    <button>PDF</button>
+                </div>
+
+                <input type="text" name=""
+                id="" class="form-control w-auto" placeholder="Search">
             </div>
 
-            <table class="table table-bordered">
+            <table class="table table-bordered text-center">
                 <thead>
                     <tr>
                         <th scope="col">
                             <input type="checkbox" name="" id="">
                         </th>
                         <th scope="col">STT</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Thao tác</th>
+                        <th scope="col">Col 1</th>
+                        <th scope="col">Col 2</th>
+                        <th scope="col">Col 3</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,40 +83,45 @@
                             <input type="checkbox" name="" id="">
                         </th>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>John Doe</td>
                         <td>
-                            <button type="button">Sửa</button>
-                            <button type="button">Xóa</button>
+                            <button type="button">Detail</button>
+                            <button type="button">Edit</button>
+                            <button type="button">Delete</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <nav aria-label="...">
+                    <ul class="pagination pagination-sm">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">5</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">10</a></li>
+                        <li class="page-item"><a class="page-link" href="#">50</a></li>
+                        <li class="page-item"><a class="page-link" href="#">100</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-
-        <nav aria-label="...">
-            <ul class="pagination pagination-sm">
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">5</span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">10</a></li>
-                <li class="page-item"><a class="page-link" href="#">15</a></li>
-            </ul>
-        </nav>
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
