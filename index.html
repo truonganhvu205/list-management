@@ -201,6 +201,14 @@
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl)
         })
+
+        var popover = new bootstrap.Popover(element, {
+            popperConfig: function (defaultBsPopperConfig) {
+                // var newPopperConfig = {...}
+                // use defaultBsPopperConfig if needed...
+                // return newPopperConfig
+            }
+        })
     </script>
     <script type="module" src="/api/index.js"></script>
 </body>
