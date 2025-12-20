@@ -45,7 +45,7 @@
                             <button type="button"
                             class="btn btn-outline-primary w-auto">Add</button>
                         </div>
-                        <div class="row flex-wrap gap-1">
+                        <div class="row flex-wrap gap-2">
                             <button type="button"
                             class="btn btn-outline-secondary btn-sm w-auto">Import Excel</button>
                             <button type="button"
@@ -67,7 +67,7 @@
         <div class="border rounded p-4">
             <div class="row mb-2 align-items-center g-2">
                 <div class="col-12 col-md-8">
-                    <div class="d-flex flex-wrap gap-1">
+                    <div class="d-flex flex-wrap gap-2">
                         <button class="btn btn-outline-secondary btn-sm">Copy</button>
                         <button class="btn btn-outline-secondary btn-sm">Excel</button>
                         <button class="btn btn-outline-secondary btn-sm">CSV</button>
@@ -117,7 +117,7 @@
                             <td>John Doe</td>
                             <td>John Doe II</td>
                             <td class="align-middle text-center">
-                                <div class="d-inline-flex justify-content-center flex-wrap gap-1">
+                                <div class="d-inline-flex justify-content-center flex-wrap gap-2">
                                     <button type="button"
                                     class="btn btn-link btn-sm text-decoration-none">Detail</button>
                                     <button type="button"
@@ -131,7 +131,7 @@
                 </table>
             </div>
 
-            <div class="mb-4 small d-inline-flex align-items-center gap-1">Showing 1 - <span>
+            <div class="mb-4 small d-inline-flex align-items-center gap-2">Showing 1 - <span>
                 <select class="form-select form-select-sm w-auto">
                     <option value="5" selected>5</option>
                     <option value="10">10</option>
@@ -157,8 +157,8 @@
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item">
                             <button type="button"
-                            id="page-btn"
-                            class="page-link">...</button>
+                            id="jumpPage-btn" class="page-link"
+                            data-bs-toggle="popover">...</button>
                         </li>
                         <li class="page-item"><a class="page-link" href="#">100</a></li>
                         <li class="page-item">
@@ -178,28 +178,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
-        const pageBtn = document.getElementById('page-btn')
-
-        var popover = new bootstrap.Popover(pageBtn, {
-            container: "body",
-            html: true,
-            sanitize: false,
-            placement: 'bottom',
-            content: `
-                <div class="d-flex justify-content-center align-items-center">
-                    <form action="" class="d-flex align-items-center gap-1 m-0">
-                        <input type="number"
-                        min="3" max="99"
-                        value="3"
-                        class="form-control form-control-sm d-inline-block w-auto">
-                        
-                        <button type="submit" class="btn btn-sm btn-outline-primary">Go</button>
-                    </form>
-                </div>`,
-            popperConfig: function (defaultBsPopperConfig) {}
-        })
-    </script>
+    <script src="/utils/jumpPage.js"></script>
     <script type="module" src="/api/index.js"></script>
 </body>
 </html>
