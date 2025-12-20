@@ -8,8 +8,7 @@ var popover = new bootstrap.Popover(jumpPageBtn, {
     sanitize: false,
     content: `
         <form id="jumpForm" class="d-flex gap-2 align-items-center">
-            <input
-            type="number" min="3" max="99" value="3"
+            <input type="number" min="3" max="99" value="3"
             class="form-control form-control-sm"/>
 
             <button type="submit" class="btn btn-sm btn-outline-primary">Go</button>
@@ -18,13 +17,28 @@ var popover = new bootstrap.Popover(jumpPageBtn, {
 })
 
 jumpPageBtn.addEventListener('click', e => {
+    e.preventDefault()
     e.stopPropagation()
+
     popover.toggle()
+    jumpPageBtn.blur()
+
+    setTimeout(() => {
+        const pop = document.querySelector('.popover')
+        if (!pop) return
+
+        const input = pop.querySelector('input')
+        if (input) {
+            input.focus()
+            input.select()
+        }
+    }, 0)
 })
 
 document.addEventListener('submit', e => {
     if (e.target.id === 'jumpForm') {
         e.preventDefault()
+        e.stopPropagation()
 
         const page = e.target.querySelector('input').value
         window.location.href = `?page=${page}`
