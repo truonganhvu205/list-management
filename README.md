@@ -2,4 +2,4 @@
 
 HTML, CSS, JS
 
-Bootstrap v5.1.3
+Bootstrap v5.1.3, Tom Select
