@@ -1,3 +1,4 @@
+/* Dropdown */
 .ts-wrapper {
     width: auto !important;
     min-width: 52px !important;
@@ -41,6 +42,10 @@
     border-radius: 0.375rem !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
     border: 1px solid #dee2e6 !important;
+}
+
+.ts-dropdown-content {
+    padding: 0;
 }
 
 .ts-dropdown .option {
@@ -103,4 +108,49 @@
 
 .ts-dropdown {
     animation: dropdownSlideDown 0.15s ease-out;
+}
+
+/* Pagination */
+.pagination .page-link {
+    border: none !important;
+    background-color: transparent !important;
+    color: #6c757d;
+    padding: 4px 10px;
+    margin: 0 4px;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #0d6efd;
+    transition: width 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    color: #495057;
+}
+
+.pagination .page-link:hover::after {
+    width: 80%;
+}
+
+.pagination .page-item.active .page-link {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.pagination .page-item.active .page-link::after {
+    width: 80%;
+}
+
+.pagination .page-item.disabled .page-link {
+    opacity: 0.3;
 }
