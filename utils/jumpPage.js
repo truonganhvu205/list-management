@@ -41,7 +41,7 @@ document.addEventListener('submit', e => {
         e.stopPropagation()
 
         const page = e.target.querySelector('input').value
-        window.location.href = `?page=${page}`
+        window.location.href = `search?page=${page}`
         popover.hide()
     }
 })
