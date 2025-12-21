@@ -12,31 +12,33 @@
 <!-- Vu Truong Anh -->
 <!-- truonganhvu205@gmail.com -->
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">List Management</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul id="auth_login" class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-primary" href="/auth/login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/register.html">Register</a>
-                    </li>
-                </ul>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">List Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul id="auth_login" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary" href="/auth/login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/register.html">Register</a>
+                        </li>
+                    </ul>
 
-                <div id="username_logout" class="navbar-nav ms-auto mb-2 mb-lg-0 d-none">
-                    <div class="d-flex align-items-center">
-                        <a class="text-decoration-none" href="#">Username</a>, 
-                        <a class="nav-link p-0 ms-1" href="#">Logout</a>
+                    <div id="username_logout" class="navbar-nav ms-auto mb-2 mb-lg-0 d-none">
+                        <div class="d-flex align-items-center">
+                            <a class="text-decoration-none" href="#">Username</a>, 
+                            <a class="nav-link p-0 ms-1" href="#">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
     
     <div class="container">
         <div class="my-4">
@@ -183,9 +185,7 @@
 
             <div class="mb-4 small d-inline-flex align-items-center gap-1">
                 Showing 1 - <span>
-                    <!-- <select id="choice-select" class="form-select form-select-sm w-auto"> -->
-                    <select id="choice-select" class="form-select form-select-sm">
-                        <!-- <option value="10" class="d-none" selected>10</option> -->
+                    <select id="choice-select">
                         <option value="10" selected>10</option>
                         <option value="20">20</option>
                         <option value="50">50</option>
@@ -193,8 +193,8 @@
                 </span> of 100 records
             </div>
 
-            <div class="">
-                <nav class="">
+            <div>
+                <nav>
                     <ul class="pagination pagination-sm justify-content-center m-0">
                         <li class="page-item disabled">
                             <a class="page-link">
