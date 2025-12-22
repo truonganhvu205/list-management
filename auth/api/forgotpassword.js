@@ -7,6 +7,12 @@ import {
 const email = document.getElementById('email')
 const forgotPasswordForm = document.getElementById('forgotPassword_form')
 
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        email.focus()
+    }, 150)
+})
+
 email.addEventListener('input', () => {
     if (email.value.trim() && !email_isValid(email.value.trim())) {
         err(email)
@@ -20,5 +26,11 @@ forgotPasswordForm.addEventListener('submit', e => {
 
     if(!email.value.trim()) {
         err(email)
+        
+        setTimeout(() => {
+            email.focus()
+        }, 150)
+        
+        return
     }
 })

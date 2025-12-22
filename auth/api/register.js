@@ -5,6 +5,8 @@ import {
     password_isMatch,
     err,
     clearErr,
+    triggerStaticEffect,
+    backFormReset,
 } from '../utils/index.js'
 
 const username = document.getElementById('username')
@@ -12,6 +14,7 @@ const email = document.getElementById('email')
 const password = document.getElementById('password')
 const passwordConfirm = document.getElementById('password_confirm')
 const registerForm = document.getElementById('register_form')
+const staticModal = document.getElementById('staticBackdrop')
 
 username.addEventListener('input', e => {
     if (username.value.trim() && !username_isValid(username.value.trim())) {
@@ -58,5 +61,24 @@ registerForm.addEventListener('submit', e => {
         err(email)
         err(password)
         err(passwordConfirm)
+        triggerStaticEffect()
+        
+        setTimeout(() => {
+            username.focus()
+        }, 150)
+        
+        return
     }
+
+    const modal = bootstrap.Modal.getInstance(staticModal)
+    modal.hide()
+    window.location.href = '/auth/login.html'
 })
+
+staticModal.addEventListener('shown.bs.modal', () => {
+    setTimeout(() => {
+        username.focus()
+    }, 150)
+})
+
+backFormReset(registerForm)
