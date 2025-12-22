@@ -29,7 +29,8 @@ function initLoginForm() {
             triggerStaticEffect()
             
             setTimeout(() => {
-                username.focus()
+                username?.focus()
+                username?.select()
             }, 150)
             
             return
@@ -42,7 +43,14 @@ function initLoginForm() {
 
     staticModal.addEventListener('shown.bs.modal', () => {
         setTimeout(() => {
-            username.focus()
+            username?.focus()
+        }, 150)
+    })
+
+    staticModal.addEventListener('hidePrevented.bs.modal', () => {
+        setTimeout(() => {
+            username?.focus()
+            username?.select()
         }, 150)
     })
 

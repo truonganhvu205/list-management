@@ -7,11 +7,9 @@ async function loginModal(target_id) {
     btn.addEventListener('click', async () => {
         try {
             if (!modalHTML) {
-                const basePath = document.querySelector('base')?.href || window.location.origin
-                const fetchUrl = new URL('/auth/login.html', basePath).href
-                
-                console.log('Fetching from:', fetchUrl)
-                
+                // const basePath = document.querySelector('base')?.href || window.location.origin
+                // const fetchUrl = new URL('/auth/login.html', basePath).href
+                const fetchUrl = new URL('/auth/login.html', import.meta.url)
                 const res = await fetch(fetchUrl)
                 if (!res.ok) {
                     throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`)
@@ -26,7 +24,8 @@ async function loginModal(target_id) {
                 
                 if (!loginFormInitialized) {
                     try {
-                        const { default: initLoginForm } = await import('/api/login.js')
+                        // const { default: initLoginForm } = await import('/api/login.js')
+                        const { default: initLoginForm } = await import('/auth/api/login.js')
                         initLoginForm()
                         loginFormInitialized = true
                     } catch(error) {
@@ -38,7 +37,7 @@ async function loginModal(target_id) {
             const modal = new bootstrap.Modal(document.getElementById('staticBackdrop'))
             modal.show()
             
-            btn.disabled = false
+            btn.disabled = true
         } catch (error) {
             console.error('Failed to load modal:', error)
         }
