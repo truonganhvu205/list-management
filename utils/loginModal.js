@@ -21,7 +21,7 @@ async function loginModal(target_id) {
                 
                 if (!loginFormInitialized) {
                     try {
-                        const { default: initLoginForm } = await import('/auth/api/login.js')
+                        const { default: initLoginForm } = await import('/api/login.js')
                         initLoginForm()
                         loginFormInitialized = true
                     } catch(error) {
