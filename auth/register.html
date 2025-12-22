@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/auth/assets/css/style.css">
 </head>
 <body>
-    <div class="modal fade" id="register_staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="register_staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header justify-content-center position-relative">
@@ -49,9 +49,9 @@
                             <button type="submit" id="register_btn"
                             class="btn btn-primary w-100 mb-3">Register</button>
                             
-                            <p class="small text-muted text-center">Already have an account? 
-                                <a href="/auth/login.html"
-                                class="text-decoration-none">Login</a>
+                            <p class="small text-muted d-flex justify-content-center align-items-center gap-1">Don't have an account? 
+                                <button type="button" id="login_btn"
+                                class="btn btn-link btn-sm text-decoration-none p-0">Login</button>
                             </p>
                         </div>
                     </form>

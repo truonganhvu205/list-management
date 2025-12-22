@@ -8,9 +8,9 @@ const email = document.getElementById('email')
 const forgotPasswordForm = document.getElementById('forgotPassword_form')
 
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        email.focus()
-    }, 150)
+    requestAnimationFrame(() => {
+        email?.focus()
+    })
 })
 
 email.addEventListener('input', () => {
@@ -27,9 +27,10 @@ forgotPasswordForm.addEventListener('submit', e => {
     if(!email.value.trim()) {
         err(email)
         
-        setTimeout(() => {
-            email.focus()
-        }, 150)
+        requestAnimationFrame(() => {
+            email?.focus()
+            email?.select()
+        })
         
         return
     }

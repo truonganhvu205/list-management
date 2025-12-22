@@ -12,9 +12,9 @@ const passwordConfirm = document.getElementById('password_confirm')
 const resetpasswordForm = document.getElementById('resetpassword_form')
 
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        password.focus()
-    }, 150)
+    requestAnimationFrame(() => {
+        password?.focus()
+    })
 })
 
 password.addEventListener('input', e => {
@@ -22,6 +22,20 @@ password.addEventListener('input', e => {
         err(password)
     } else {
         clearErr(password)
+    }
+    
+    if(!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
+        err(passwordConfirm)
+    } else {
+        clearErr(passwordConfirm)
+    }
+    
+    if (passwordConfirm.value.trim()) {
+        if (!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
+            err(passwordConfirm)
+        } else {
+            clearErr(passwordConfirm)
+        }
     }
 })
 
@@ -44,9 +58,10 @@ resetpasswordForm.addEventListener('submit', e => {
         err(password)
         err(passwordConfirm)
         
-        setTimeout(() => {
-            password.focus()
-        }, 150)
+        requestAnimationFrame(() => {
+            password?.focus()
+            password?.select()
+        })
         
         return
     }

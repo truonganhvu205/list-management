@@ -17,7 +17,7 @@ function initRegisterForm() {
     const registerForm = document.getElementById('register_form')
     const staticModal = document.getElementById('register_staticBackdrop')
 
-    username.addEventListener('input', e => {
+    username.addEventListener('input', () => {
         if (username.value.trim() && !username_isValid(username.value.trim())) {
             err(username)
         } else {
@@ -33,17 +33,26 @@ function initRegisterForm() {
         }
     })
 
-    password.addEventListener('input', e => {
+    password.addEventListener('input', () => {
         if(password.value.trim() && !password_isValid(password.value.trim())) {
             err(password)
         } else {
             clearErr(password)
         }
+
+        if (passwordConfirm.value.trim()) {
+            if (!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
+                err(passwordConfirm)
+            } else {
+                clearErr(passwordConfirm)
+            }
+        }
     })
 
-    passwordConfirm.addEventListener('input', e => {
+    passwordConfirm.addEventListener('input', () => {
         if(!passwordConfirm.value.trim()) {
             clearErr(passwordConfirm)
+            return
         }
 
         if(!password_isMatch(password.value.trim(), passwordConfirm.value.trim())) {
@@ -55,6 +64,7 @@ function initRegisterForm() {
 
     registerForm.addEventListener('submit', e => {
         e.preventDefault()
+        e.stopPropagation()
 
         if(!username.value.trim() || !email.value.trim() || 
         !password.value.trim() || !passwordConfirm.value.trim()) {
@@ -64,30 +74,31 @@ function initRegisterForm() {
             err(passwordConfirm)
             triggerStaticEffect(staticModal)
             
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 username?.focus()
                 username?.select()
-            }, 150)
+            })
             
             return
         }
 
         const modal = bootstrap.Modal.getInstance(staticModal)
-        modal.hide()
+        if(modal) modal.hide()
+            
         window.location.href = '/auth/login.html'
     })
 
     staticModal.addEventListener('shown.bs.modal', () => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             username?.focus()
-        }, 150)
+        })
     })
 
     staticModal.addEventListener('hidePrevented.bs.modal', () => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             username?.focus()
             username?.select()
-        }, 150)
+        })
     })
 
     backFormReset(registerForm)

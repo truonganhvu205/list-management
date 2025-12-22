@@ -28,11 +28,10 @@ function initLoginForm() {
             err(password)
             triggerStaticEffect(staticModal)
             
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 username?.focus()
                 username?.select()
-            }, 150)
-            
+            })
             return
         }
 
@@ -42,16 +41,16 @@ function initLoginForm() {
     })
 
     staticModal.addEventListener('shown.bs.modal', () => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             username?.focus()
-        }, 150)
+        })
     })
 
     staticModal.addEventListener('hidePrevented.bs.modal', () => {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             username?.focus()
             username?.select()
-        }, 150)
+        })
     })
 
     backFormReset(loginForm)
