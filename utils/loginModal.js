@@ -5,6 +5,7 @@ async function loginModal(target_id) {
     const btn = document.getElementById(target_id)
 
     btn.addEventListener('click', async () => {
+        console.log('ok')
         try {
             if (!modalHTML) {
                 const res = await fetch('/auth/login.html')
