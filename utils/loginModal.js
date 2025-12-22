@@ -7,6 +7,7 @@ async function loginModal(target_id) {
     btn.addEventListener('click', async () => {
         try {
             btn.disabled = true
+            await new Promise(r => setTimeout(r, 0))
             
             if (!loginModalHTML) {
                 // const basePath = document.querySelector('base')?.href || window.location.origin

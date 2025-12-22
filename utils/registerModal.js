@@ -7,6 +7,7 @@ async function registerModal(target_id) {
     btn.addEventListener('click', async () => {
         try {
             btn.disabled = true
+            await new Promise(r => setTimeout(r, 0))
             
             if (!registerModalHTML) {
                 const fetchUrl = new URL('/auth/register.html', import.meta.url)
