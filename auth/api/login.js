@@ -9,7 +9,7 @@ function initLoginForm() {
     const username = document.getElementById('username')
     const password = document.getElementById('password')
     const loginForm = document.getElementById('login_form')
-    const staticModal = document.getElementById('staticBackdrop')
+    const staticModal = document.getElementById('login_staticBackdrop')
 
     username.addEventListener('input', () => {
         clearErr(username)
@@ -26,7 +26,7 @@ function initLoginForm() {
         if(!username.value.trim() || !password.value.trim()) {
             err(username)
             err(password)
-            triggerStaticEffect()
+            triggerStaticEffect(staticModal)
             
             setTimeout(() => {
                 username?.focus()

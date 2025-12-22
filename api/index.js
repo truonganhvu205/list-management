@@ -1,10 +1,12 @@
 import choices from "./choices.js"
 import {
     loginModal,
+    registerModal,
 } from "../utils/index.js"
 
 document.addEventListener('DOMContentLoaded', () => {
     loginModal('login_btn')
+    registerModal('register_btn')
     
-    const choiceSelect = choices('#choice-select')
+    choices('#choice-select')
 })

@@ -1,10 +1,8 @@
-const staticModal = document.getElementById('staticBackdrop')
-
-function triggerStaticEffect() {
-  staticModal.classList.add('modal-static')
+function triggerStaticEffect(target_id) {
+  target_id.classList.add('modal-static')
 
   setTimeout(() => {
-    staticModal.classList.remove('modal-static')
+    target_id.classList.remove('modal-static')
   }, 300)
 }
 
